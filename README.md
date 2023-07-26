@@ -65,9 +65,38 @@ gcloud components update
 
 For example, I chose __us-central1__.
 
-```
+```sh
 gcloud config set run/region us-central1
 ```
+
+* * *
+
+## Enable some services
+
+```sh
+gcloud services enable \
+    artifactregistry.googleapis.com \
+    cloudbuild.googleapis.com \
+    run.googleapis.com
+```
+
+## Auth Docker
+
+```sh
+gcloud auth configure-docker YOUR_REGION-docker.pkg.dev
+```
+
+* * *
+
+## Create a repo
+
+```sh
+gcloud artifacts repositories create demo-repo \
+    --repository-format=docker \
+    --location=YOUR_REGION \
+    --description="Docker repository
+```
+
 
 * * *
 
@@ -75,8 +104,10 @@ gcloud config set run/region us-central1
 
 Substitute __PROJECT-ID__ with your current gcloud project id:
 
-```
-gcloud builds submit --tag gcr.io/PROJECT-ID/hello
+```sh
+gcloud builds submit --tag YOUR_REGION-docker.pkg.dev/PROJECT-ID/demo-repo/hello
+
+gcloud builds submit --tag us-central1-docker.pkg.dev/PROJECT-ID/demo-repo/hello
 ```
 
 Select Y, if you get a warning like this:
@@ -110,7 +141,7 @@ To see and manage the container image, browse to:
 Substitute __PROJECT-ID__ with your current gcloud project id:
 
 ```
-gcloud run deploy hello-web --image gcr.io/PROJECT-ID/hello
+gcloud run deploy hello-web --image REGION-docker.pkg.dev/PROJECT-ID/demo-repo/hello
 ```
 
 Assuming you don't care if anyone runs your app (as in making it public):
@@ -144,7 +175,7 @@ To save money you should consider taking down private and test resources when no
 Visit the following console pages to delete test resources:
 
 * https://console.cloud.google.com/run
-* https://console.cloud.google.com/gcr
+* https://console.cloud.google.com/artifacts
 
 To delete the service using the command line, run this command:
 
@@ -155,7 +186,13 @@ gcloud run services delete hello-web
 To delete the image using the command line (substitute PROJECT-ID with your Google cloud Project ID):
 
 ```sh
-gcloud container images delete gcr.io/PROJECT-ID/hello
+gcloud artifacts docker images delete REGION-docker.pkg.dev/PROJECT-ID/demo-repo/hello
+```
+
+To delete the repo:
+
+```sh
+gcloud artifacts repositories delete demo-repo
 ```
 
 To monitor billing:
