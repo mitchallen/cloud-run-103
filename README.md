@@ -5,11 +5,11 @@ A Google Cloud Run starter project
 
 This package was created as a gloud run demo.
 
-This is an update to my older, now outdated demo (cloud-run-101).
+This is an update to my older, now outdated demos (cloud-run-101, cloud-run-102).
 
 ## Installation
 
-    $ git clone https://github.com/mitchallen/cloud-run-102.git
+    $ git clone https://github.com/mitchallen/cloud-run-103.git
   
 * * *
 
@@ -21,7 +21,8 @@ This is an update to my older, now outdated demo (cloud-run-101).
 
 ## Note about billing
 
-Please note that this demo shows how to use services that Google will bill you for.  New users are given a credit and some services are offered for free, below a minimal use.
+Please note that this demo shows how to use services that Google will bill you for.  
+New users are given a credit and some services are offered for free, below a minimal use.
 
 Be sure to keep an eye on billing and delete test resources when no longer needed.
 
@@ -88,13 +89,13 @@ gcloud auth configure-docker YOUR_REGION-docker.pkg.dev
 
 * * *
 
-## Create a repo
+## Create a repo to hold Docker images
 
 ```sh
 gcloud artifacts repositories create demo-repo \
     --repository-format=docker \
     --location=YOUR_REGION \
-    --description="Docker repository
+    --description="Docker repo'
 ```
 
 
@@ -106,16 +107,12 @@ Substitute __PROJECT-ID__ with your current gcloud project id:
 
 ```sh
 gcloud builds submit --tag YOUR_REGION-docker.pkg.dev/PROJECT-ID/demo-repo/hello
+```
 
+For the region of us-central1:
+
+```sh
 gcloud builds submit --tag us-central1-docker.pkg.dev/PROJECT-ID/demo-repo/hello
-```
-
-Select Y, if you get a warning like this:
-
-```
-API [cloudbuild.googleapis.com] not enabled on project [############].
- Would you like to enable and retry (this will take a few minutes)? 
-(y/N)?
 ```
 
 If you forgot your project ID:
