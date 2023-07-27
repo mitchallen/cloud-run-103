@@ -8,7 +8,7 @@ export PROJECT_NUMBER=$(gcloud projects describe $PROJECT_ID --format="value(pro
 export IDNS=${PROJECT_ID}.svc.id.goog # workflow identity domain
 
 export GCP_REGION="us-central1" # CHANGEME (OPT)
-export GCP_ZONE="us-us-central1-a" # CHANGEME (OPT)
+export GCP_ZONE="us-central1-a" # CHANGEME (OPT)
 export NETWORK_NAME="default"
 
 export REPO_NAME="demo-repo"
