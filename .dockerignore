@@ -1,4 +1,13 @@
 Dockerfile
 .dockerignore
+.git
+.gitignore
+README.md
+LICENSE
 node_modules
 npm-debug.log
+.nyc_output
+coverage
+.DS_Store
+*.log
+demo-build.sh
