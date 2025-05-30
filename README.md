@@ -129,7 +129,7 @@ gcloud info
 
 To see and manage the container image, browse to:
 
-* https://console.cloud.google.com/gcr
+* https://console.cloud.google.com/artifacts
 
 * * *
 
