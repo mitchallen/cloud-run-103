@@ -9,6 +9,9 @@ RUN adduser -S nextjs -u 1001
 # Create app directory
 WORKDIR /usr/src/app
 
+# Update npm to latest version to fix CVE-2024-21538 (cross-spawn vulnerability)
+RUN npm install -g npm@latest
+
 # Copy package files and change ownership
 COPY package*.json ./
 RUN chown -R nextjs:nodejs /usr/src/app
