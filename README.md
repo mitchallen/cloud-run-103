@@ -131,6 +131,8 @@ To see and manage the container image, browse to:
 
 * https://console.cloud.google.com/artifacts
 
+**If you have multiple project ids, switch to the one associated with this project.**
+
 * * *
 
 ## Deploy to Cloud Run
