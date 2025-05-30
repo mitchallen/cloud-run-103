@@ -42,41 +42,6 @@ See: https://console.cloud.google.com/billing
 brew install --cask google-cloud-sdk
 ```
 
-* * * 
-
-## Using a Makefile
-
-* If you are setup on Google Cloud Console you can use **make** to build, deploy and remove the demo project.
-* If you want to walk through the steps, see the next section.
-
-### Make help
-
-To get help from **make** simply run:
-
-```sh
-make
-```
-
-### Build and Deploy
-
-**NOTE**: This will deploy services that you may be billed for. Be sure to run **cleanup** step below when finished testing.
-
-```sh
-make up
-```
-
-* Browse and refresh the artifacts: https://console.cloud.google.com/artifacts/
-* Make sure that the package is not showing any vulnerabilities (if it is, resolve them)
-
-### Cleanup
-
-```sh
-make down
-```
-
-* Browse and refresh the artifacts: https://console.cloud.google.com/artifacts/
-* Verify the package has been deleted (so you don't rack up any bills)
-
 * * *
 
 ## Initialize a project
@@ -121,6 +86,46 @@ gcloud services enable \
 ```sh
 gcloud auth configure-docker YOUR_REGION-docker.pkg.dev
 ```
+
+* * * 
+
+## Using a Makefile
+
+* If you are setup on Google Cloud Console you can use **make** to build, deploy and remove the demo project.
+* If you want to walk through the steps, see the next section.
+
+### Make help
+
+To get help from **make** simply run:
+
+```sh
+make
+```
+
+### Build and Deploy
+
+**NOTE**: This will deploy services that you may be billed for. Be sure to run **cleanup** step below when finished testing.
+
+```sh
+make up
+```
+
+* Browse and refresh the servuce and artifacts: 
+    * https://console.cloud.google.com/run
+    * https://console.cloud.google.com/artifacts/
+* Make sure that the package is not showing any vulnerabilities (if it is, resolve them)
+
+### Cleanup
+
+```sh
+make down
+```
+
+* Browse and refresh the servuce and artifacts: 
+    * https://console.cloud.google.com/run
+    * https://console.cloud.google.com/artifacts/
+* Verify the package has been deleted (so you don't rack up any bills)
+
 
 * * *
 
