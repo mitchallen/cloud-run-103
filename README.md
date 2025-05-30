@@ -95,7 +95,7 @@ gcloud auth configure-docker YOUR_REGION-docker.pkg.dev
 gcloud artifacts repositories create demo-repo \
     --repository-format=docker \
     --location=YOUR_REGION \
-    --description="Docker repo'
+    --description="Docker repo"
 ```
 
 
