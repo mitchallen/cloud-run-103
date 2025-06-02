@@ -3,6 +3,27 @@ cloud-run-103
 A Google Cloud Run starter project
 --
 
+## Note about billing
+
+Please note that this demo shows how to use services that Google will bill you for.  
+New users are given a credit and some services are offered for free, below a minimal use.
+
+Be sure to keep an eye on billing and delete test resources when no longer needed.
+
+See: https://console.cloud.google.com/billing
+
+### Container Registry Vulnerability Scanning Charges
+
+Be sure to review this:
+
+* https://cloud.google.com/artifact-analysis/docs/controlling-costs
+
+While testing this repo I recevied a small bill for **Container Registry Vulnerability Scanning**.
+
+It seems that every time I cleaned my artifacts and started over with a fresh container for demo purposes - I was getting charged **$0.26 USD**
+
+* * *
+
 This package was created as a gloud run demo.
 
 This is an update to my older, now outdated demos (cloud-run-101, cloud-run-102).
@@ -19,16 +40,7 @@ This is an update to my older, now outdated demos (cloud-run-101, cloud-run-102)
 
 * * *
 
-## Note about billing
 
-Please note that this demo shows how to use services that Google will bill you for.  
-New users are given a credit and some services are offered for free, below a minimal use.
-
-Be sure to keep an eye on billing and delete test resources when no longer needed.
-
-See: https://console.cloud.google.com/billing
-
-* * *
 
 ## Create a GCP (Google Cloud Platform) project
 
