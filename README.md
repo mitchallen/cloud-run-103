@@ -18,13 +18,13 @@ Be sure to review this:
 
 * https://cloud.google.com/artifact-analysis/docs/controlling-costs
 
-While testing this repo I recevied a small bill for **Container Registry Vulnerability Scanning**.
+While testing this repo I received a small bill for **Container Registry Vulnerability Scanning**.
 
 It seems that every time I cleaned my artifacts and started over with a fresh container for demo purposes - I was getting charged **$0.26 USD**
 
 * * *
 
-This package was created as a gloud run demo.
+This package was created as a gcloud run demo.
 
 This is an update to my older, now outdated demos (cloud-run-101, cloud-run-102).
 
@@ -103,7 +103,7 @@ gcloud auth configure-docker YOUR_REGION-docker.pkg.dev
 
 ## Using a Makefile
 
-* If you are setup on Google Cloud Console you can use **make** to build, deploy and remove the demo project.
+* If you are set up on Google Cloud Console you can use **make** to build, deploy and remove the demo project.
 * If you want to walk through the steps, see the next section.
 
 ### Make help
@@ -122,7 +122,7 @@ make
 make up
 ```
 
-* Browse and refresh the servuce and artifacts: 
+* Browse and refresh the service and artifacts: 
     * https://console.cloud.google.com/run
     * https://console.cloud.google.com/artifacts/
 * Make sure that the package is not showing any vulnerabilities (if it is, resolve them)
@@ -133,7 +133,7 @@ make up
 make down
 ```
 
-* Browse and refresh the servuce and artifacts: 
+* Browse and refresh the service and artifacts: 
     * https://console.cloud.google.com/run
     * https://console.cloud.google.com/artifacts/
 * Verify the package has been deleted (so you don't rack up any bills)
